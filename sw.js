@@ -1,7 +1,7 @@
 /* Service worker — מה שהופך את זה לאפליקציה שעובדת בלי רשת.
    הגרסה מוזרקת בבנייה, כך שכל build דוחף עדכון למכשירים. */
 
-const VERSION = "11430c77f3a3";
+const VERSION = "6a0059ea3763";
 const SHELL_CACHE = "shell-" + VERSION;
 const FONT_CACHE = "fonts-v1";
 
