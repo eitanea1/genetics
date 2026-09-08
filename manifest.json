@@ -1,0 +1,19 @@
+{
+  "name": "מסלול גנטיקה",
+  "short_name": "גנטיקה",
+  "description": "לימוד גנטיקה בכרטיסיות קצרות עם שאלות, משוב מיידי וחזרה מרווחת.",
+  "lang": "he",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#E9EEEF",
+  "theme_color": "#0A5A64",
+  "categories": ["education"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
