@@ -586,6 +586,203 @@ main { flex: 1; display: flex; flex-direction: column; padding-bottom: 8px; }
 .time .n { font-family: var(--f-mono); font-weight: 700; font-size: 18px; display: block; }
 .time .u { font-size: 11.5px; color: var(--ink-3); }
 
+/* התחברות */
+.auth { max-width: 420px; margin: 0 auto; padding-top: 10px; }
+.auth h1 { font-family: var(--f-display); font-size: 28px; margin: 0 0 6px; letter-spacing: -.02em; }
+.auth .lead { color: var(--ink-2); font-size: 15px; margin: 0 0 22px; line-height: 1.55; }
+.auth .tabs { display: flex; gap: 6px; margin-bottom: 18px; }
+.auth .tabs button {
+  flex: 1; background: none; border: none; border-bottom: 2px solid var(--line);
+  padding: 10px 4px; font-size: 15px; font-weight: 600; color: var(--ink-3);
+}
+.auth .tabs button.on { color: var(--accent); border-color: var(--accent); }
+.field { margin-bottom: 13px; }
+.field label { display: block; font-size: 13px; font-weight: 600; color: var(--ink-2); margin-bottom: 5px; }
+.field input {
+  width: 100%; font: inherit; font-size: 16px;
+  padding: 12px 14px; border-radius: 11px;
+  border: 1.5px solid var(--line); background: var(--surface); color: var(--ink);
+}
+.field input:focus { outline: none; border-color: var(--accent); }
+.field .hint { font-size: 12.5px; color: var(--ink-3); margin-top: 5px; }
+.formerr {
+  background: var(--no-soft); color: var(--no); font-weight: 600;
+  padding: 11px 14px; border-radius: 10px; font-size: 14.5px; margin-bottom: 13px;
+}
+.formok {
+  background: var(--ok-soft); color: var(--ok); font-weight: 600;
+  padding: 11px 14px; border-radius: 10px; font-size: 14.5px; margin-bottom: 13px;
+}
+
+/* שורת חשבון במסך הבית */
+.account {
+  display: flex; align-items: center; gap: 11px;
+  background: var(--surface); border: 1px solid var(--line-soft);
+  border-radius: var(--radius); padding: 13px 16px; margin-bottom: 12px;
+}
+.account .who { flex: 1; min-width: 0; }
+.account .who b { font-size: 15px; }
+.account .who small { display: block; font-size: 12.5px; color: var(--ink-3); margin-top: 1px; }
+.account .link {
+  background: none; border: none; color: var(--accent);
+  font-size: 14px; font-weight: 600; padding: 6px 2px;
+}
+
+/* איך לזכור + מסביר */
+.tools { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line-soft); }
+.tools-btns { display: flex; gap: 7px; flex-wrap: wrap; }
+.tool {
+  background: none; border: 1px solid var(--line); border-radius: 999px;
+  padding: 7px 13px; font-size: 13.5px; font-weight: 600; color: var(--ink-2);
+  transition: border-color .15s, color .15s;
+}
+.tool:hover:not([disabled]) { border-color: var(--accent); color: var(--accent); }
+.tool[disabled] { opacity: .5; cursor: wait; }
+.tool.mem { border-color: var(--gold); color: var(--gold); }
+.tool.mem:hover { background: var(--gold-soft); }
+
+.panel {
+  margin-top: 13px; padding: 15px;
+  background: var(--surface-2); border-radius: 11px;
+  animation: rise .25s;
+}
+.panel .ttl2 {
+  font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-3); margin-bottom: 9px;
+}
+.panel .body2 { font-size: 15.5px; line-height: 1.6; }
+
+.mem-list { display: flex; flex-direction: column; gap: 9px; }
+.mem-item {
+  background: var(--surface); border: 1px solid var(--line-soft);
+  border-radius: 10px; padding: 12px 14px;
+}
+.mem-item.mine { border-color: var(--gold); background: var(--gold-soft); }
+.mem-head {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 11.5px; font-weight: 700; color: var(--ink-3); margin-bottom: 6px;
+}
+.mem-head .tag {
+  background: var(--line-soft); padding: 2px 8px; border-radius: 999px;
+}
+.mem-item.mine .mem-head { color: var(--gold); }
+.mem-item.mine .mem-head .tag { background: color-mix(in srgb, var(--gold) 20%, transparent); }
+.mem-head .sp { flex: 1; }
+.mem-txt { font-size: 15px; line-height: 1.55; }
+.mem-act { display: flex; gap: 10px; margin-top: 9px; }
+.mem-act button {
+  background: none; border: none; font-size: 13px; font-weight: 600;
+  color: var(--ink-3); padding: 2px;
+}
+.mem-act button:hover { color: var(--accent); }
+.mem-act button.voted { color: var(--gold); }
+.mem-new textarea {
+  width: 100%; font: inherit; font-size: 15px; line-height: 1.5;
+  padding: 11px 13px; border-radius: 10px; min-height: 76px; resize: vertical;
+  border: 1.5px solid var(--line); background: var(--surface); color: var(--ink);
+}
+.mem-new textarea:focus { outline: none; border-color: var(--gold); }
+.mem-new .row2 { display: flex; gap: 8px; margin-top: 9px; }
+.mem-hint { font-size: 13px; color: var(--ink-3); line-height: 1.5; margin: 0 0 10px; }
+
+.ask-box { display: flex; gap: 7px; margin-top: 10px; }
+.ask-box input {
+  flex: 1; font: inherit; font-size: 15px; padding: 11px 13px;
+  border-radius: 10px; border: 1.5px solid var(--line);
+  background: var(--surface); color: var(--ink);
+}
+.ask-box input:focus { outline: none; border-color: var(--accent); }
+.ask-box button {
+  border: none; border-radius: 10px; background: var(--accent); color: var(--on-accent);
+  font-weight: 700; padding: 0 18px; font-size: 15px;
+}
+
+/* ניהול */
+.adm { display: flex; flex-direction: column; gap: 14px; }
+.adm .box {
+  background: var(--surface); border: 1px solid var(--line-soft);
+  border-radius: var(--radius); box-shadow: var(--shadow); padding: 16px 18px;
+}
+.adm h3 { font-family: var(--f-display); font-size: 17px; margin: 0 0 10px; }
+.inv { display: flex; flex-direction: column; gap: 1px; background: var(--line-soft);
+       border-radius: 10px; overflow: hidden; }
+.inv .r { display: flex; align-items: center; gap: 10px; background: var(--surface-2); padding: 10px 12px; }
+.inv code {
+  font-family: var(--f-mono); font-size: 14.5px; font-weight: 700;
+  direction: ltr; letter-spacing: .04em;
+}
+.inv .st { flex: 1; font-size: 12.5px; color: var(--ink-3); }
+.inv .r.used code { opacity: .45; text-decoration: line-through; }
+.money { display: flex; gap: 10px; flex-wrap: wrap; }
+.money .m { flex: 1; min-width: 110px; background: var(--surface-2); border-radius: 10px; padding: 12px 14px; }
+.money .m .v2 {
+  font-family: var(--f-mono); font-size: 20px; font-weight: 700; direction: ltr;
+}
+.money .m .l2 { font-size: 12px; color: var(--ink-3); margin-top: 2px; }
+.money .m.good .v2 { color: var(--ok); }
+
+/* זכיות בסוף הסשן */
+.wins { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+.win {
+  display: flex; align-items: flex-start; gap: 10px;
+  background: var(--gold-soft); border-radius: 10px; padding: 11px 13px;
+  font-size: 14.5px; line-height: 1.5; color: var(--ink);
+}
+.win .ic { font-size: 18px; line-height: 1.2; flex: none; }
+.win b { color: var(--gold); }
+.win.calm { background: var(--surface-2); }
+.win.calm b { color: var(--accent); }
+.stat-row { display: flex; gap: 10px; margin-top: 14px; }
+.stat-row .stat { flex: 1; margin: 0; }
+
+/* רצועת הגיימיפיקציה */
+.game {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--surface); border: 1px solid var(--line-soft);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 16px 18px; margin-bottom: 12px;
+}
+.game .cell { display: flex; align-items: center; gap: 9px; }
+.game .cell + .cell { border-inline-start: 1px solid var(--line-soft); padding-inline-start: 14px; }
+.game .big {
+  font-family: var(--f-mono); font-size: 22px; font-weight: 700; line-height: 1;
+  direction: ltr; font-variant-numeric: tabular-nums;
+}
+.game .lbl2 { font-size: 11.5px; color: var(--ink-3); margin-top: 3px; }
+.game .flame { font-size: 22px; filter: grayscale(1) opacity(.45); }
+.game .flame.on { filter: none; }
+.game .ring { position: relative; width: 42px; height: 42px; flex: none; }
+.game .ring svg { transform: rotate(-90deg); display: block; }
+.game .ring .track { stroke: var(--line); }
+.game .ring .fill { stroke: var(--accent); transition: stroke-dasharray .6s ease; }
+.game .ring .fill.met { stroke: var(--ok); }
+.game .ring .mid {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font-family: var(--f-mono); font-size: 11px; font-weight: 700;
+}
+.game .grow2 { flex: 1; }
+.game .freeze { font-size: 13px; color: var(--ink-3); }
+
+.badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.badge {
+  background: var(--gold-soft); color: var(--gold);
+  font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px;
+}
+
+/* ליגה */
+.lg { display: flex; flex-direction: column; gap: 1px; background: var(--line-soft);
+      border-radius: var(--radius); overflow: hidden; }
+.lg .row { display: flex; align-items: center; gap: 12px; background: var(--surface); padding: 13px 16px; }
+.lg .row.me { background: var(--accent-soft); }
+.lg .rank {
+  font-family: var(--f-mono); font-size: 14px; font-weight: 700;
+  color: var(--ink-3); width: 24px; flex: none; text-align: center;
+}
+.lg .row:first-child .rank { color: var(--gold); }
+.lg .nm2 { flex: 1; font-size: 15px; font-weight: 600; min-width: 0; }
+.lg .nm2 small { display: block; font-weight: 400; font-size: 12.5px; color: var(--ink-3); }
+.lg .xp { font-family: var(--f-mono); font-size: 15px; font-weight: 700; color: var(--accent); direction: ltr; }
+
 /* התקדמות בקורס — שתי רמות: מה שראיתי, ומה שבאמת נשאר */
 .done {
   background: var(--surface);
@@ -741,23 +938,30 @@ main { flex: 1; display: flex; flex-direction: column; padding-bottom: 8px; }
   /* ---------------- flat card list ---------------- */
 
   var ALL = [];
-  COURSE.units.forEach(function (u) {
-    (u.lessons || []).forEach(function (les) {
-      les.cards.forEach(function (c, i) {
-        ALL.push({
-          card: c,
-          unitId: u.id,
-          unitTitle: u.title,
-          lessonId: les.id,
-          lessonTitle: les.title,
-          idxInLesson: i,
-          lessonLen: les.cards.length
+  var BY_ID = {};
+
+  // נבנה מחדש כשמצטרף תוכן — שאלות ממבחנים נכנסות אחרי הטעינה
+  function buildIndex() {
+    ALL = [];
+    BY_ID = {};
+    COURSE.units.forEach(function (u) {
+      (u.lessons || []).forEach(function (les) {
+        les.cards.forEach(function (c, i) {
+          ALL.push({
+            card: c,
+            unitId: u.id,
+            unitTitle: u.title,
+            lessonId: les.id,
+            lessonTitle: les.title,
+            idxInLesson: i,
+            lessonLen: les.cards.length
+          });
         });
       });
     });
-  });
-  var BY_ID = {};
-  ALL.forEach(function (e, i) { e.pos = i; BY_ID[e.card.id] = e; });
+    ALL.forEach(function (e, i) { e.pos = i; BY_ID[e.card.id] = e; });
+  }
+  buildIndex();
 
   var QUIZ = { mcq: 1, truefalse: 1, punnett: 1, order: 1 };
   function isQuiz(c) { return !!QUIZ[c.type]; }
@@ -792,6 +996,7 @@ main { flex: 1; display: flex; flex-direction: column; padding-bottom: 8px; }
   function save() {
     try { localStorage.setItem(KEY, JSON.stringify(state)); saveFailed = false; }
     catch (e) { saveFailed = true; }
+    if (typeof syncSoon === "function") syncSoon();   // דחיפה לשרת, מושהית
   }
 
   /* ---- העברת התקדמות בין מכשירים: ייצוא לקובץ, ייבוא ממנו ---- */
@@ -1168,7 +1373,20 @@ main { flex: 1; display: flex; flex-direction: column; padding-bottom: 8px; }
       if (allSeen && state.lessonsDone.indexOf(lid) === -1) state.lessonsDone.push(lid);
     });
     save();
+
+    // הרצף, הנקודות והליגה נסגרים בשרת — כאן רק מדווחים ומרעננים את המסך
+    sessionReport = null;
+    if (me) {
+      reportSession({ cards: S.i, correct: right, wrong: wrong, mode: S.mode || "learn" })
+        .then(function (r) {
+          if (!r) return;
+          sessionReport = r;
+          if (S && S.ended) render();
+        });
+    }
   }
+
+  var sessionReport = null;
 
   /* ---------------- text ---------------- */
 
@@ -1205,32 +1423,309 @@ main { flex: 1; display: flex; flex-direction: column; padding-bottom: 8px; }
      ההסברים החלופיים כתובים מראש בתוך התוכן: עובדים אופליין, מיידית,
      ובאיכות שנבדקה. עדיף על קריאה ל-AI שדורשת רשת, חשבון והמתנה. */
 
+  /** טקסט הכרטיסייה כפי שהמסביר רואה אותו */
+  function cardText(c) {
+    var bits = [c.term, c.q, c.text, c.sub, c.note].filter(Boolean);
+    if (c.options) bits.push("אפשרויות: " + c.options.join(" | ") + ". הנכונה: " + c.options[c.correct]);
+    if (c.rows) c.rows.forEach(function (r) { bits.push(r[0] + " = " + r[1]); });
+    if (c.points) bits = bits.concat(c.points);
+    return bits.join("\n");
+  }
+
   function tutorBar(entry) {
-    var alts = entry.card.alt;
-    if (!alts || !alts.length) return "";
-    return '<div class="tutor"><div class="tutor-btns">' +
-      '<button class="tutor-btn" data-alt="1">תסביר אחרת</button>' +
-      '</div><div class="tutor-slot"></div></div>';
+    var c = entry.card;
+    var has = c.alt && c.alt.length;
+    if (!has && serverUp === false) return "";
+    var h = '<div class="tools"><div class="tools-btns">';
+    if (has) h += '<button class="tool" data-alt="1">תסביר אחרת</button>';
+    if (serverUp !== false) {
+      h += '<button class="tool mem" data-tool="mem">איך לזכור</button>';
+      h += '<button class="tool" data-tool="steps">פרק את החישוב</button>';
+      h += '<button class="tool" data-tool="ask">שאל שאלה</button>';
+    }
+    return h + '</div><div class="tutor-slot"></div><div class="tool-slot"></div></div>';
   }
 
   function wireTutor(root, entry) {
+    var c = entry.card;
     var slot = root.querySelector(".tutor-slot");
-    if (!slot) return;
-    var alts = entry.card.alt || [];
-    var i = 0;
-    var btn = root.querySelector("[data-alt]");
-    if (!btn) return;
+    var out = root.querySelector(".tool-slot");
 
-    btn.addEventListener("click", function () {
-      var a = alts[i % alts.length];
-      i++;
-      slot.innerHTML =
-        '<div class="tutor-out"><div class="who">' + esc(a.title || "זווית אחרת") + "</div>" +
-        fmt(a.text) + "</div>";
-      btn.textContent = i % alts.length === 0 && alts.length > 1
-        ? "חזרה להסבר הראשון"
-        : alts.length > 1 ? "עוד דרך אחרת" : "תסביר אחרת";
+    // ההסברים החלופיים הכתובים מראש — עובדים גם בלי חיבור
+    var alts = c.alt || [];
+    var i = 0;
+    var ab = root.querySelector("[data-alt]");
+    if (ab && slot) {
+      ab.addEventListener("click", function () {
+        var a = alts[i % alts.length];
+        i++;
+        slot.innerHTML = '<div class="tutor-out"><div class="who">' +
+          esc(a.title || "זווית אחרת") + "</div>" + fmt(a.text) + "</div>";
+        ab.textContent = (i % alts.length === 0 && alts.length > 1) ? "חזרה להסבר הראשון"
+          : alts.length > 1 ? "עוד דרך אחרת" : "תסביר אחרת";
+      });
+    }
+    if (!out) return;
+
+    function needLogin(what) {
+      out.innerHTML = '<div class="panel"><div class="ttl2">' + esc(what) + "</div>" +
+        '<p class="mem-hint">צריך להתחבר כדי להשתמש בזה. ההתחברות גם מסנכרנת את ההתקדמות בין המכשירים.</p>' +
+        '<button class="btn ghost" data-login="1">התחבר</button></div>';
+      out.querySelector("[data-login]").addEventListener("click", function () {
+        S = null; screen = "auth"; render();
+      });
+    }
+
+    root.querySelectorAll("[data-tool]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var kind = b.dataset.tool;
+        if (!me) return needLogin(b.textContent);
+        if (kind === "mem") return openMnemonics(out, c);
+        if (kind === "ask") return openAsk(out, c);
+        return runAI(out, c, "steps", null, b);
+      });
     });
+  }
+
+  /* ---------------- מסביר ---------------- */
+
+  async function runAI(out, card, kind, question, btn) {
+    var titles = { steps: "פירוק החישוב", ask: "תשובה", explain: "זווית אחרת", mnemonic: "איך לזכור" };
+    out.innerHTML = '<div class="panel"><div class="ttl2">' + esc(titles[kind] || "") +
+      '</div><div class="body2">חושב&hellip;</div></div>';
+    if (btn) btn.disabled = true;
+    try {
+      var r = await apiCall("ai", {
+        method: "POST",
+        body: { cardId: card.id, kind: kind, cardText: cardText(card), question: question },
+      });
+      out.querySelector(".body2").innerHTML = fmt(r.answer) +
+        (r.cached ? '<p class="mem-hint" style="margin-top:10px">נענתה כבר — הוגשה מהמטמון, בלי עלות.</p>' : "");
+      return r.answer;
+    } catch (e) {
+      out.querySelector(".body2").innerHTML =
+        '<span style="color:var(--no);font-weight:600">' + esc(e.message) + "</span>";
+      return null;
+    } finally {
+      if (btn) btn.disabled = false;
+    }
+  }
+
+  function openAsk(out, card) {
+    out.innerHTML = '<div class="panel"><div class="ttl2">שאל על הכרטיסייה הזו</div>' +
+      '<div class="ask-box"><input id="q" placeholder="מה לא ברור לך כאן?"><button id="qgo">שאל</button></div>' +
+      '<div class="body2" style="margin-top:12px"></div></div>';
+    var inp = out.querySelector("#q");
+    var go = out.querySelector("#qgo");
+    function send() {
+      var q = (inp.value || "").trim();
+      if (!q) return;
+      runAI(out, card, "ask", q);
+    }
+    go.addEventListener("click", send);
+    inp.addEventListener("keydown", function (e) { if (e.key === "Enter") send(); });
+    inp.focus();
+  }
+
+  /* ---------------- איך לזכור ---------------- */
+
+  var KIND_TAG = { user: "שלי", builtin: "מהקורס", ai: "נוצר" };
+
+  async function openMnemonics(out, card) {
+    out.innerHTML = '<div class="panel"><div class="ttl2">איך לזכור</div>' +
+      '<div class="body2">טוען&hellip;</div></div>';
+    var box = out.querySelector(".body2");
+
+    async function refresh() {
+      var r;
+      try { r = await apiCall("mnemonics/" + encodeURIComponent(card.id)); }
+      catch (e) { box.innerHTML = '<span style="color:var(--no)">' + esc(e.message) + "</span>"; return; }
+
+      var h = "";
+      if (!r.mnemonics.length) {
+        h += '<p class="mem-hint">אין עדיין דרך לזכור את זה. <b>כתוב אחת משלך</b> — ' +
+          "מנמוניקה שהמצאת בעצמך נזכרת הרבה יותר טוב מכל אחת שמישהו אחר כתב.</p>";
+      } else {
+        h += '<div class="mem-list">' + r.mnemonics.map(function (m) {
+          return '<div class="mem-item' + (m.mine ? " mine" : "") + '" data-id="' + m.id + '">' +
+            '<div class="mem-head"><span class="tag">' + esc(KIND_TAG[m.kind] || m.kind) + "</span>" +
+            (m.title ? "<span>" + esc(m.title) + "</span>" : "") +
+            (!m.mine && m.author ? "<span>" + esc(m.author) + "</span>" : "") +
+            '<span class="sp"></span>' +
+            (m.upvotes ? "<span>" + m.upvotes + " &#9650;</span>" : "") + "</div>" +
+            '<div class="mem-txt">' + inline(m.text) + "</div>" +
+            '<div class="mem-act">' +
+              (m.mine
+                ? '<button data-share="' + m.id + '">' + (m.is_public ? "משותפת — הפוך לפרטית" : "שתף עם כולם") + "</button>" +
+                  '<button data-del="' + m.id + '">מחק</button>'
+                : '<button data-vote="' + m.id + '" class="' + (m.voted ? "voted" : "") + '">' +
+                  (m.voted ? "&#9650; עוזר לי" : "עוזר לי") + "</button>") +
+            "</div></div>";
+        }).join("") + "</div>";
+      }
+
+      h += '<div class="mem-new" style="margin-top:12px">' +
+        '<textarea id="m-txt" placeholder="איך אתה זוכר את זה? ראשי תיבות, משחק מילים, תמונה מהראש שלך&hellip;"></textarea>' +
+        '<div class="row2">' +
+          '<button class="btn ghost" id="m-save">שמור</button>' +
+          '<button class="btn ghost" id="m-ai">תייצר לי אחת</button>' +
+        "</div></div>";
+
+      box.innerHTML = h;
+
+      box.querySelectorAll("[data-vote]").forEach(function (b) {
+        b.addEventListener("click", async function () {
+          try { await apiCall("mnemonics/" + b.dataset.vote + "/vote", { method: "POST" }); refresh(); }
+          catch (e) {}
+        });
+      });
+      box.querySelectorAll("[data-share]").forEach(function (b) {
+        b.addEventListener("click", async function () {
+          var cur = b.textContent.indexOf("הפוך לפרטית") >= 0;
+          try {
+            await apiCall("mnemonics/" + b.dataset.share, { method: "PATCH", body: { isPublic: !cur } });
+            refresh();
+          } catch (e) {}
+        });
+      });
+      box.querySelectorAll("[data-del]").forEach(function (b) {
+        b.addEventListener("click", async function () {
+          try { await apiCall("mnemonics/" + b.dataset.del, { method: "DELETE" }); refresh(); }
+          catch (e) {}
+        });
+      });
+
+      box.querySelector("#m-save").addEventListener("click", async function () {
+        var t = (box.querySelector("#m-txt").value || "").trim();
+        if (!t) return;
+        try {
+          await apiCall("mnemonics", { method: "POST", body: { cardId: card.id, text: t, isPublic: false } });
+          refresh();
+        } catch (e) {}
+      });
+
+      box.querySelector("#m-ai").addEventListener("click", async function (ev) {
+        var b = ev.currentTarget;
+        b.disabled = true;
+        b.textContent = "חושב…";
+        try {
+          var r = await apiCall("ai", {
+            method: "POST",
+            body: { cardId: card.id, kind: "mnemonic", cardText: cardText(card) },
+          });
+          box.querySelector("#m-txt").value = r.answer;
+          b.textContent = "עוד אחת";
+        } catch (e) {
+          b.textContent = e.message;
+        } finally { b.disabled = false; }
+      });
+    }
+
+    refresh();
+  }
+
+  /* ---------------- חיבור לשרת ----------------
+     עקרון: האפליקציה עובדת במלואה גם בלי חיבור. ההתחברות מוסיפה
+     סנכרון, רצף, ליגה, מנמוניקות ומסביר — ולא חוסמת כלום. */
+
+  var me = null;          // { user, summary } כשמחובר
+  var serverUp = null;    // null = עוד לא נבדק
+  var syncState = "";     // הודעה קצרה למשתמש
+
+  async function apiCall(path, opts) {
+    opts = opts || {};
+    var res = await fetch("api/" + path, {
+      method: opts.method || "GET",
+      credentials: "same-origin",
+      headers: opts.body ? { "content-type": "application/json" } : {},
+      body: opts.body ? JSON.stringify(opts.body) : undefined,
+    });
+    var json = null;
+    try { json = await res.json(); } catch (e) {}
+    if (!res.ok) {
+      var err = new Error((json && json.error) || "שגיאת שרת");
+      err.status = res.status;
+      throw err;
+    }
+    return json;
+  }
+
+  // בגרסה המקומית (GitHub Pages) אין שרת — נכשל בשקט ונשארים במצב מקומי
+  async function connectServer() {
+    try {
+      var h = await apiCall("health");
+      serverUp = !!h.ok;
+    } catch (e) { serverUp = false; render(); return; }
+
+    try {
+      me = await apiCall("me");
+      await syncNow();
+      loadExamCards();
+    } catch (e) { me = null; }
+    render();
+  }
+
+  /** מיזוג דו-כיווני: מושכים, ממזגים לתוך המקומי, ודוחפים חזרה */
+  async function syncNow(quiet) {
+    if (!me) return;
+    try {
+      var pulled = await apiCall("progress");
+      var changed = mergeProgress({ v: 1, cards: pulled.cards, days: [], history: [], lessonsDone: [] });
+      var pushed = await apiCall("progress", { method: "POST", body: { cards: state.cards } });
+      me.summary = pushed.summary;
+      if (!quiet) syncState = changed ? "סונכרן — " + changed + " עודכנו מהשרת" : "מסונכרן";
+      lastSync = Date.now();
+    } catch (e) {
+      if (!quiet) syncState = "הסנכרון נכשל — ההתקדמות נשמרה במכשיר";
+    }
+  }
+
+  var lastSync = 0;
+  function syncSoon() {
+    if (!me) return;
+    clearTimeout(syncSoon._t);
+    syncSoon._t = setTimeout(function () { syncNow(true); }, 4000);
+  }
+
+  async function reportSession(stats) {
+    if (!me) return null;
+    try {
+      var r = await apiCall("session", { method: "POST", body: stats });
+      me.summary = r.summary;
+      return r;
+    } catch (e) { return null; }
+  }
+
+  /** שאלות ממבחנים — נותחו פעם אחת, נקראות בחינם, ונכנסות לרוטציה */
+  async function loadExamCards() {
+    if (!me) return;
+    var r;
+    try { r = await apiCall("exams/cards"); } catch (e) { return; }
+    if (!r.exams || !r.exams.length) return;
+
+    var lessons = r.exams
+      .filter(function (ex) { return ex.cards && ex.cards.length; })
+      .map(function (ex) {
+        return { id: "exam-" + ex.id, title: ex.title, cards: ex.cards, estMinutes: Math.ceil(ex.cards.length / 2) };
+      });
+    if (!lessons.length) return;
+
+    var unit = {
+      id: "exams",
+      title: "שאלות ממבחנים",
+      goal: "שאלות אמיתיות ממבחנים שעברו. זו הרמה שתפגוש, לא רמת הסיכום.",
+      lessons: lessons,
+    };
+    COURSE.units = COURSE.units.filter(function (u) { return u.id !== "exams"; });
+    COURSE.units.push(unit);
+    buildIndex();
+    render();
+  }
+
+  async function doLogout() {
+    try { await apiCall("logout", { method: "POST" }); } catch (e) {}
+    me = null;
+    render();
   }
 
   /* ---------------- התקנה כאפליקציה ---------------- */
@@ -1736,6 +2231,288 @@ challengeButtons();
     });
   }
 
+  function ring(pct, met) {
+    var r = 17, c = 2 * Math.PI * r, on = c * Math.min(100, pct) / 100;
+    return '<div class="ring"><svg width="42" height="42">' +
+      '<circle class="track" cx="21" cy="21" r="' + r + '" fill="none" stroke-width="4"></circle>' +
+      '<circle class="fill' + (met ? " met" : "") + '" cx="21" cy="21" r="' + r + '" fill="none"' +
+      ' stroke-width="4" stroke-linecap="round" stroke-dasharray="' + on.toFixed(1) + " " + c.toFixed(1) + '">' +
+      "</circle></svg>" +
+      '<div class="mid">' + Math.min(100, pct) + "</div></div>";
+  }
+
+  var BADGE_LABEL = {
+    "streak-7": "שבוע ברצף", "streak-30": "חודש ברצף", "streak-100": "100 ימים",
+    "cards-100": "100 כרטיסיות", "cards-462": "כל הקורס", "xp-1000": "1000 נקודות",
+  };
+
+  function gameStrip() {
+    if (!me) return "";
+    // תשובת שרת חלקית לא מפילה את המסך
+    var s = me.summary || {};
+    var d = s.daily || { cards: 0, goal: 20, pct: 0, met: false };
+    s.streak = s.streak || 0;
+    s.xp = s.xp || 0;
+    var h = '<div class="game">';
+    h += '<div class="cell"><span class="flame' + (s.streak ? " on" : "") + '">&#128293;</span>' +
+      '<div><div class="big">' + s.streak + "</div>" +
+      '<div class="lbl2">' + (s.streak === 1 ? "יום ברצף" : "ימים ברצף") + "</div></div></div>";
+    h += '<div class="cell">' + ring(d.pct, d.met) +
+      '<div><div class="big">' + d.cards + " / " + d.goal + "</div>" +
+      '<div class="lbl2">היעד היום</div></div></div>';
+    h += '<div class="cell grow2"><div><div class="big">' + s.xp + "</div>" +
+      '<div class="lbl2">נקודות</div></div></div>';
+    if (s.freezes) h += '<div class="freeze" title="הקפאות במלאי">&#129482; ' + s.freezes + "</div>";
+    h += "</div>";
+
+    if (s.badges && s.badges.length) {
+      h += '<div class="badges">' + s.badges.map(function (b) {
+        return '<span class="badge">' + esc(BADGE_LABEL[b.key] || b.key) + "</span>";
+      }).join("") + "</div>";
+    }
+    return h;
+  }
+
+  function accountRow() {
+    // null = עוד לא נבדק. לא מכריזים "לא מחובר" לפני שיודעים.
+    if (serverUp !== true && !me) return "";
+    if (!me) {
+      return '<div class="account"><div class="who"><b>לא מחובר</b>' +
+        "<small>התחבר כדי לסנכרן בין מכשירים ולפתוח את הרצף, הליגה והמסביר</small></div>" +
+        '<button class="link" id="go-auth">התחבר</button></div>';
+    }
+    var away = me.summary.away;
+    return '<div class="account"><div class="who"><b>' + esc(me.user.name) + "</b>" +
+      "<small>" + esc(syncState || "מסונכרן") +
+      (away ? " &middot; חזרת אחרי " + away + " ימים" : "") + "</small></div>" +
+      '<button class="link" id="go-league">ליגה</button>' +
+      (me.user.role === "admin" ? '<button class="link" id="go-admin">ניהול</button>' : "") +
+      '<button class="link" id="go-out">יציאה</button></div>';
+  }
+
+  function screenAdmin() {
+    var h = '<div class="topbar"><button class="iconbtn" id="back-home" aria-label="חזרה">&rarr;</button>' +
+      '<div class="grow"><h1>ניהול</h1><div class="sub">הזמנות ועלויות המסביר</div></div></div>';
+    h += '<main><div class="adm">' +
+      '<div class="box"><h3>קודי הזמנה</h3><div id="inv"><p class="fineprint">טוען&hellip;</p></div>' +
+      '<div class="row2" style="margin-top:12px">' +
+      '<button class="btn ghost" id="new-inv">צור קוד חדש</button></div>' +
+      '<p class="fineprint">קוד אחד למשתמש אחד. מי שאין לו קוד לא יכול להירשם.</p></div>' +
+      '<div class="box"><h3>מבחנים</h3>' +
+      '<p class="fineprint">העלאת PDF של מבחן הופכת כל שאלה בו לכרטיסיית תרגול. ' +
+      'הניתוח נעשה פעם אחת ועולה כסף; הכרטיסיות שנוצרו נקראות אחר כך בחינם, לכולם.</p>' +
+      '<div id="exams"><p class="fineprint">טוען&hellip;</p></div>' +
+      '<div class="row2" style="margin-top:12px">' +
+      '<button class="btn ghost" id="pick-exam">העלה מבחן</button></div>' +
+      '<input type="file" id="examfile" accept="application/pdf,.pdf" hidden>' +
+      '<p class="fineprint" id="exam-msg"></p></div>' +
+      '<div class="box"><h3>עלויות החודש</h3><div id="spend"><p class="fineprint">טוען&hellip;</p></div></div>' +
+      "</div></main>";
+    app.innerHTML = h;
+    app.querySelector("#back-home").addEventListener("click", function () { screen = null; render(); });
+
+    function loadInvites() {
+      apiCall("admin/invites").then(function (r) {
+        var box = app.querySelector("#inv");
+        if (!r.invites.length) { box.innerHTML = '<p class="fineprint">אין עדיין קודים.</p>'; return; }
+        box.innerHTML = '<div class="inv">' + r.invites.map(function (i) {
+          return '<div class="r' + (i.used_by ? " used" : "") + '"><code>' + esc(i.code) + "</code>" +
+            '<span class="st">' + (i.used_by ? "בשימוש &middot; " + esc(i.used_by)
+              : i.note ? esc(i.note) : "פנוי") + "</span></div>";
+        }).join("") + "</div>";
+      }).catch(function (e) {
+        app.querySelector("#inv").innerHTML = '<p class="fineprint warn">' + esc(e.message) + "</p>";
+      });
+    }
+
+    app.querySelector("#new-inv").addEventListener("click", function (ev) {
+      var b = ev.currentTarget;
+      b.disabled = true;
+      apiCall("admin/invites", { method: "POST", body: {} })
+        .then(function () { loadInvites(); })
+        .catch(function () {})
+        .then(function () { b.disabled = false; });
+    });
+
+    apiCall("admin/spend").then(function (r) {
+      app.querySelector("#spend").innerHTML =
+        '<div class="money">' +
+        '<div class="m"><div class="v2">$' + (r.month || 0).toFixed(2) + '</div>' +
+        '<div class="l2">שולם החודש</div></div>' +
+        '<div class="m"><div class="v2">' + (r.calls || 0) + '</div>' +
+        '<div class="l2">קריאות חדשות</div></div>' +
+        '<div class="m good"><div class="v2">$' + (r.savedByCache || 0).toFixed(2) + '</div>' +
+        '<div class="l2">נחסך מהמטמון</div></div></div>' +
+        (r.byUser && r.byUser.length
+          ? '<div class="inv" style="margin-top:12px">' + r.byUser.map(function (x) {
+              return '<div class="r"><span class="st" style="flex:1">' + esc(x.name) + "</span>" +
+                "<code>$" + (x.usd || 0).toFixed(3) + "</code></div>";
+            }).join("") + "</div>"
+          : "") +
+        '<p class="fineprint">תשובה ששמורה במטמון מוגשת לכולם בחינם — לכן אותה שאלה לא משולמת פעמיים.</p>';
+    }).catch(function (e) {
+      app.querySelector("#spend").innerHTML = '<p class="fineprint warn">' + esc(e.message) + "</p>";
+    });
+
+    function loadExams() {
+      apiCall("exams").then(function (r) {
+        var box = app.querySelector("#exams");
+        if (!r.exams.length) { box.innerHTML = '<p class="fineprint">אין עדיין מבחנים.</p>'; return; }
+        box.innerHTML = '<div class="inv">' + r.exams.map(function (e) {
+          return '<div class="r"><span class="st" style="flex:1">' + esc(e.title) +
+            "</span><code>" + e.n_cards + "</code>" +
+            '<button class="link" data-rm="' + e.id + '">הסר</button></div>';
+        }).join("") + "</div>";
+        box.querySelectorAll("[data-rm]").forEach(function (b) {
+          armDanger(b, "הסר", function () {
+            apiCall("admin/exam/" + b.dataset.rm, { method: "DELETE" })
+              .then(loadExams).catch(function () {});
+          });
+        });
+      }).catch(function (e) {
+        app.querySelector("#exams").innerHTML = '<p class="fineprint warn">' + esc(e.message) + "</p>";
+      });
+    }
+
+    var picker = app.querySelector("#examfile");
+    var emsg = app.querySelector("#exam-msg");
+    app.querySelector("#pick-exam").addEventListener("click", function () { picker.click(); });
+    picker.addEventListener("change", function () {
+      var f = picker.files && picker.files[0];
+      picker.value = "";
+      if (!f) return;
+      if (f.size > 24 * 1024 * 1024) { emsg.textContent = "הקובץ גדול מדי (מעל 24MB)."; return; }
+      emsg.textContent = "קורא את " + f.name + "…";
+      var fr = new FileReader();
+      fr.onerror = function () { emsg.textContent = "לא הצלחתי לקרוא את הקובץ."; };
+      fr.onload = function () {
+        var b64 = String(fr.result).split(",")[1] || "";
+        emsg.textContent = "מנתח את המבחן. זה לוקח דקה-שתיים — אל תסגור את המסך.";
+        apiCall("admin/exam", {
+          method: "POST",
+          body: { title: f.name.replace(/\.pdf$/i, ""), fileName: f.name, pdfBase64: b64 },
+        }).then(function (r) {
+          emsg.textContent = "נוצרו " + r.n + " שאלות" +
+            (r.dropped ? " (" + r.dropped + " נפסלו)" : "") +
+            " · עלות $" + (r.usd || 0).toFixed(3);
+          loadExams();
+          loadExamCards();
+        }).catch(function (e) { emsg.textContent = e.message; });
+      };
+      fr.readAsDataURL(f);
+    });
+
+    loadInvites();
+    loadExams();
+    window.scrollTo(0, 0);
+  }
+
+  function screenLeague() {
+    var h = '<div class="topbar"><button class="iconbtn" id="back-home" aria-label="חזרה">&rarr;</button>' +
+      '<div class="grow"><h1>הליגה השבועית</h1><div class="sub">מתאפסת כל יום ראשון</div></div></div>';
+    h += '<main><div id="lg"><p class="fineprint">טוען&hellip;</p></div></main>';
+    app.innerHTML = h;
+    app.querySelector("#back-home").addEventListener("click", function () { screen = null; render(); });
+
+    apiCall("league").then(function (r) {
+      var box = app.querySelector("#lg");
+      if (!r.league.length) { box.innerHTML = '<p class="fineprint">אין עדיין נתונים לשבוע הזה.</p>'; return; }
+      box.innerHTML = '<div class="lg">' + r.league.map(function (p, i) {
+        return '<div class="row' + (p.id === r.me ? " me" : "") + '">' +
+          '<span class="rank">' + (i + 1) + "</span>" +
+          '<span class="nm2">' + esc(p.name) +
+          (p.streak ? "<small>&#128293; " + p.streak + " ימים ברצף</small>" : "") + "</span>" +
+          '<span class="xp">' + p.xp + "</span></div>";
+      }).join("") + "</div>" +
+      '<p class="fineprint">הדירוג לפי נקודות מיום ראשון. כרטיסייה = נקודה, תשובה נכונה = עוד שתיים.</p>';
+    }).catch(function () {
+      app.querySelector("#lg").innerHTML = '<p class="fineprint warn">לא הצלחתי לטעון את הליגה.</p>';
+    });
+    window.scrollTo(0, 0);
+  }
+
+  var authTab = "login";
+
+  function screenAuth() {
+    var isReg = authTab === "register";
+    var h = '<div class="topbar"><button class="iconbtn" id="back-home" aria-label="חזרה">→</button>' +
+      '<div class="grow"></div></div><main><div class="auth">';
+
+    h += "<h1>" + (isReg ? "חשבון חדש" : "התחברות") + "</h1>";
+    h += '<p class="lead">' + (isReg
+      ? "אחרי ההרשמה ההתקדמות שלך תסונכרן בין כל המכשירים, וייפתחו הרצף, הליגה, חלון \"איך לזכור\" והמסביר."
+      : "ההתקדמות תסונכרן אוטומטית בין הטלפון למחשב.") + "</p>";
+
+    h += '<div class="tabs">' +
+      '<button data-tab="login" class="' + (!isReg ? "on" : "") + '">יש לי חשבון</button>' +
+      '<button data-tab="register" class="' + (isReg ? "on" : "") + '">הרשמה</button></div>';
+
+    h += '<div id="msg"></div>';
+
+    if (isReg) {
+      h += '<div class="field"><label>קוד הזמנה</label>' +
+        '<input id="f-invite" autocomplete="off" placeholder="XXXX-XXXX" style="direction:ltr;text-align:left">' +
+        '<div class="hint">ההרשמה בהזמנה בלבד</div></div>';
+      h += '<div class="field"><label>שם</label><input id="f-name" autocomplete="name"></div>';
+    }
+    h += '<div class="field"><label>מייל</label>' +
+      '<input id="f-email" type="email" autocomplete="email" style="direction:ltr;text-align:left"></div>';
+    h += '<div class="field"><label>סיסמה</label>' +
+      '<input id="f-pw" type="password" autocomplete="' + (isReg ? "new-password" : "current-password") + '" style="direction:ltr;text-align:left">' +
+      (isReg ? '<div class="hint">לפחות 8 תווים</div>' : "") + "</div>";
+
+    h += "</div></main>" +
+      '<div class="actions"><button class="btn" id="f-go">' +
+      (isReg ? "הרשמה והתחלה" : "התחבר") + "</button></div>";
+
+    app.innerHTML = h;
+
+    app.querySelector("#back-home").addEventListener("click", function () { screen = null; render(); });
+    app.querySelectorAll("[data-tab]").forEach(function (b) {
+      b.addEventListener("click", function () { authTab = b.dataset.tab; screenAuth(); });
+    });
+
+    var msg = app.querySelector("#msg");
+    var btn = app.querySelector("#f-go");
+
+    async function submit() {
+      msg.innerHTML = "";
+      btn.disabled = true;
+      btn.textContent = isReg ? "נרשם…" : "מתחבר…";
+      var body = {
+        email: (app.querySelector("#f-email").value || "").trim(),
+        password: app.querySelector("#f-pw").value || "",
+      };
+      if (isReg) {
+        body.name = (app.querySelector("#f-name").value || "").trim();
+        body.invite = (app.querySelector("#f-invite").value || "").trim().toUpperCase();
+      }
+      try {
+        var r = await apiCall(isReg ? "register" : "login", { method: "POST", body: body });
+        me = { user: r.user, summary: r.summary };
+        if (r.imported) {
+          syncState = "שוחזרו " + r.imported.cards + " כרטיסיות שלמדת";
+        }
+        await syncNow(true);
+        screen = null;
+        render();
+        loadExamCards();
+      } catch (e) {
+        msg.innerHTML = '<div class="formerr">' + esc(e.message) + "</div>";
+        btn.disabled = false;
+        btn.textContent = isReg ? "הרשמה והתחלה" : "התחבר";
+      }
+    }
+
+    btn.addEventListener("click", submit);
+    app.querySelectorAll(".field input").forEach(function (i) {
+      i.addEventListener("keydown", function (ev) { if (ev.key === "Enter") submit(); });
+    });
+    window.scrollTo(0, 0);
+  }
+
+  var screen = null;
+
   function screenHome() {
     var at = nextNewIndex();
     var next = ALL[Math.min(at, ALL.length - 1)];
@@ -1751,6 +2528,9 @@ challengeButtons();
         ? "ראית " + seen + " כרטיסיות מתוך " + ALL.length + " שנבנו עד כה."
         : "18 כרטיסיות מוכנות. אפשר להתחיל עם אחת.") +
       "</div></div>";
+
+    h += accountRow();
+    h += gameStrip();
 
     var prog = courseProgress();
     h += '<div class="done">' +
@@ -1837,6 +2617,14 @@ challengeButtons();
     app.innerHTML = h;
 
     wireInstall(app);
+    var ga = app.querySelector("#go-auth");
+    if (ga) ga.addEventListener("click", function () { screen = "auth"; render(); });
+    var gl = app.querySelector("#go-league");
+    if (gl) gl.addEventListener("click", function () { screen = "league"; render(); });
+    var gd = app.querySelector("#go-admin");
+    if (gd) gd.addEventListener("click", function () { screen = "admin"; render(); });
+    var go = app.querySelector("#go-out");
+    if (go) go.addEventListener("click", doLogout);
     app.querySelector("#go-one").addEventListener("click", function () { startSession(0.46); });
     app.querySelectorAll("[data-min]").forEach(function (b) {
       b.addEventListener("click", function () { startSession(+b.dataset.min); });
@@ -1983,7 +2771,11 @@ challengeButtons();
   }
 
   function screenSession() {
-    if (S.i >= S.queue.length) { endSession(); return screenRecap(); }
+    if (S.i >= S.queue.length) {
+      // מגן: render נקרא שוב כשדוח השרת חוזר — הסשן נסגר פעם אחת בלבד
+      if (!S.ended) { S.ended = 1; endSession(); }
+      return screenRecap();
+    }
 
     var entry = S.queue[S.i];
     var rendered = renderCard(entry);
@@ -2027,6 +2819,58 @@ challengeButtons();
     window.scrollTo(0, 0);
   }
 
+  /** מה הרווחת עכשיו. בלי חיבור לשרת — רצף מקומי בלבד, וזה תקין. */
+  function recapWins() {
+    var r = sessionReport;
+
+    if (!r) {
+      var st = currentStreak();
+      var h0 = '<div class="stat-row"><div class="stat"><div class="v">' + st +
+        '</div><div class="l">' + (st === 1 ? "היום התחלת" : "ימים ברצף") + "</div></div></div>";
+      if (me) h0 += '<div class="wins"><div class="win calm"><span class="ic">&#8635;</span>' +
+        "<span>מעדכן את הרצף והנקודות בשרת&hellip;</span></div></div>";
+      return h0;
+    }
+
+    var s = r.streak || {}, cur = s.current || 0;
+    var h = '<div class="stat-row">' +
+      '<div class="stat"><div class="v">' + cur + '</div><div class="l">' +
+      (cur === 1 ? "היום התחלת" : "ימים ברצף") + "</div></div>" +
+      '<div class="stat"><div class="v">+' + (r.xp || 0) + '</div><div class="l">נקודות בסשן</div></div>' +
+      "</div>";
+
+    var w = [];
+
+    if (s.comebackFrom) {
+      w.push(["&#128075;", "<b>חזרת.</b> הרצף הקודם שלך היה " + s.comebackFrom +
+        " ימים. הוא נגמר, והרצף החדש מתחיל היום — זה כל מה שצריך לעשות עם זה.", "calm"]);
+    }
+    if (s.usedFreezes) {
+      w.push(["&#129482;", "<b>הקפאה הצילה את הרצף.</b> פספסת " + s.usedFreezes +
+        (s.usedFreezes === 1 ? " יום" : " ימים") + ", והרצף ממשיך מ" + cur + "."]);
+    }
+    if (s.earnedFreeze) {
+      w.push(["&#129482;", "<b>הרווחת הקפאה.</b> היא תכסה אוטומטית יום שתפספס."]);
+    }
+    if (r.goal && r.goal.bonus) {
+      w.push(["&#127919;", "<b>היעד היומי הושלם.</b> +" + r.goal.bonus + " נקודות בונוס."]);
+    }
+    (r.badges || []).forEach(function (b) {
+      w.push(["&#127941;", "<b>הישג חדש:</b> " + esc(b.label || b.key) + "."]);
+    });
+    if (cur >= 2 && !s.comebackFrom && !w.length) {
+      w.push(["&#128293;", "<b>" + cur + " ימים ברצף.</b> אל תשבור אותו מחר.", "calm"]);
+    }
+
+    if (w.length) {
+      h += '<div class="wins">' + w.map(function (x) {
+        return '<div class="win' + (x[2] ? " " + x[2] : "") + '"><span class="ic">' + x[0] +
+          "</span><span>" + x[1] + "</span></div>";
+      }).join("") + "</div>";
+    }
+    return h;
+  }
+
   function screenRecap() {
     var right = 0, wrong = 0, topics = {};
     S.queue.slice(0, S.i).forEach(function (e) {
@@ -2062,24 +2906,28 @@ challengeButtons();
       h += '<div class="note">לא פספסת כלום. הכרטיסיות האלה יחזרו לחזרה בעוד כמה ימים, כדי שהחומר יישאר.</div>';
     }
 
-    var streak = currentStreak();
-    h += '<div class="stat"><div class="v">' + streak + '</div><div class="l">' +
-      (streak === 1 ? "היום התחלת" : "ימים ברצף") + "</div></div>";
+    h += recapWins();
 
     h += "</div></main>";
     h += '<div class="actions">' +
       '<button class="btn" id="more">עוד 5 דקות</button>' +
+      (me ? '<button class="btn ghost" id="to-league">ליגה</button>' : "") +
       '<button class="btn ghost" id="home">סיימתי להיום</button></div>';
 
     app.innerHTML = h;
     app.querySelector("#more").addEventListener("click", function () { startSession(5); });
+    var lb = app.querySelector("#to-league");
+    if (lb) lb.addEventListener("click", function () { S = null; screen = "league"; render(); });
     app.querySelector("#home").addEventListener("click", function () { S = null; render(); });
     window.scrollTo(0, 0);
   }
 
   function render() {
-    if (S) screenSession();
-    else screenHome();
+    if (S) return screenSession();
+    if (screen === "auth") return screenAuth();
+    if (screen === "league") return screenLeague();
+    if (screen === "admin") return screenAdmin();
+    screenHome();
   }
 
   /* ---------------- go ---------------- */
@@ -2087,6 +2935,7 @@ challengeButtons();
   loadLocal();
   render();
   consumeSyncLink().then(function (had) { if (had) render(); });
+  connectServer();
 
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", function () {
