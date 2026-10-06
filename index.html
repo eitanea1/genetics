@@ -586,6 +586,40 @@ main { flex: 1; display: flex; flex-direction: column; padding-bottom: 8px; }
 .time .n { font-family: var(--f-mono); font-weight: 700; font-size: 18px; display: block; }
 .time .u { font-size: 11.5px; color: var(--ink-3); }
 
+/* התקדמות בקורס — שתי רמות: מה שראיתי, ומה שבאמת נשאר */
+.done {
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px 20px;
+  margin-bottom: 12px;
+}
+.done .top { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
+.done .pct {
+  font-family: var(--f-mono); font-size: 34px; font-weight: 700;
+  color: var(--accent); line-height: 1; direction: ltr;
+}
+.done .cap { font-size: 14px; color: var(--ink-3); flex: 1; }
+.done .bar {
+  height: 12px; border-radius: 6px; overflow: hidden;
+  background: var(--line); display: flex;
+}
+.done .bar i { display: block; height: 100%; transition: width .5s ease; }
+.done .bar .solid { background: var(--ok); }
+.done .bar .seen  { background: var(--accent); opacity: .45; }
+.done .key { display: flex; gap: 16px; margin-top: 10px; font-size: 12.5px; color: var(--ink-3); }
+.done .key span { display: flex; align-items: center; gap: 6px; }
+.done .key b { width: 9px; height: 9px; border-radius: 2px; }
+.done .key .k1 { background: var(--ok); }
+.done .key .k2 { background: var(--accent); opacity: .45; }
+
+.unit .pc {
+  font-family: var(--f-mono); font-size: 12px; font-weight: 700;
+  color: var(--ink-3); flex: none; min-width: 34px; text-align: end;
+  direction: ltr; font-variant-numeric: tabular-nums;
+}
+
 .streak { display: flex; gap: 18px; margin-top: 20px; padding: 14px 18px; background: var(--surface-2); border-radius: 12px; }
 .streak div { flex: 1; }
 .streak .n { font-family: var(--f-mono); font-size: 21px; font-weight: 700; color: var(--gold); }
@@ -1718,6 +1752,19 @@ challengeButtons();
         : "18 כרטיסיות מוכנות. אפשר להתחיל עם אחת.") +
       "</div></div>";
 
+    var prog = courseProgress();
+    h += '<div class="done">' +
+      '<div class="top"><span class="pct">' + prog.pctSeen + '%</span>' +
+      '<span class="cap">' + prog.seen + " מתוך " + prog.total + " כרטיסיות בקורס</span></div>" +
+      '<div class="bar">' +
+        '<i class="solid" style="width:' + prog.pctSolid + '%"></i>' +
+        '<i class="seen" style="width:' + (prog.pctSeen - prog.pctSolid) + '%"></i>' +
+      "</div>" +
+      '<div class="key">' +
+        '<span><b class="k1"></b>שולט ' + prog.pctSolid + "%</span>" +
+        '<span><b class="k2"></b>ראיתי, צריך חזרה ' + (prog.pctSeen - prog.pctSolid) + "%</span>" +
+      "</div></div>";
+
     h += '<div class="resume">' +
       '<div class="lbl">' + (done ? "חזרה על" : at > 0 ? "ממשיכים מ" : "מתחילים ב") + "</div>" +
       '<div class="ttl">' + esc(next.lessonTitle) + "</div>" +
@@ -1824,6 +1871,24 @@ challengeButtons();
     });
   }
 
+  // "שולט" = שרד חזרה מרווחת (מרווח 16 יום ומעלה), לא רק "ראיתי"
+  function courseProgress(cards) {
+    var list = cards || ALL;
+    var seen = 0, solid = 0;
+    list.forEach(function (e) {
+      var st = state.cards[e.card.id];
+      if (!st) return;
+      seen++;
+      if ((st.n || 0) >= 3) solid++;
+    });
+    var total = list.length || 1;
+    return {
+      total: total, seen: seen, solid: solid,
+      pctSeen: Math.round(100 * seen / total),
+      pctSolid: Math.round(100 * solid / total),
+    };
+  }
+
   function unitStats(u) {
     var cards = ALL.filter(function (e) { return e.unitId === u.id; });
     var seen = cards.filter(function (e) { return state.cards[e.card.id]; }).length;
@@ -1843,9 +1908,10 @@ challengeButtons();
       var n = (u.lessons || []).length;
       var plan = u.plan || n;
       var m = n ? masteryOf(u) : null;
-      var badge = n
-        ? '<span class="st ' + m.k + '">' + m.label + "</span>"
-        : '<span class="st none">טרם נבנה</span>';
+      var up = n ? courseProgress(ALL.filter(function (e) { return e.unitId === u.id; })) : null;
+      var badge = (up ? '<span class="pc">' + up.pctSeen + "%</span>" : "") +
+        (n ? '<span class="st ' + m.k + '">' + m.label + "</span>"
+           : '<span class="st none">טרם נבנה</span>');
 
       h += '<div class="unit' + (open === u.id ? " open" : "") + '" data-unit="' + u.id + '">' +
         '<span class="idx">' + String(i + 1).padStart(2, "0") + "</span>" +
